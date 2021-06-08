@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>All Articles</h1>
+    <%= link_to  "Add article", new_article_path, class:"btn btn-outline-secondary"%>
+    <br/><br/>
+    <% @articles.each do |article|%>
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Title: <%= link_to  article[:title], article_path(article[:id]) %> </h5>
+            <p class="card-text"> <%= article[:content] %></p>
+        </div>
+    </div>
+    <% end%>
+</div>
